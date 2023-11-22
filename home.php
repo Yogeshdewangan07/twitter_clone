@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitter Clone</title>
+    <link rel="favicon" type="image/png" href="logo/twitter-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="twitter-clone.css">
 </head>
+
 <body class="hero-section">
-    <header class="header-panel">
+    <header class="header-panel" id="header-panel">
         <div class="parent-nav-panel">
             <div class="nav-panel">
                 <div class="nav-container">
                     <div class="logo">
                         <h2><a href="#">
-                            <i class="fa-brands fa-twitter fa-lg" style="color: #1d9bf0;"></i>
-                        </a></h2>
+                                <i class="fa-brands fa-twitter fa-lg" style="color: #1d9bf0;"></i>
+                            </a></h2>
                     </div>
                     <div class="nav-bar">
                         <nav class="nav-section">
@@ -29,7 +32,7 @@
                             <a href="#">
                                 <div class="nav-box">
                                     <div class="nav-icon"><i class="fa-solid fa-magnifying-glass fa-lg"></i></div>
-                                    <div class="nav-span"><span>Explore</span></div>  
+                                    <div class="nav-span"><span>Explore</span></div>
                                 </div>
                             </a>
                             <a href="#">
@@ -53,13 +56,13 @@
                             <a href="#">
                                 <div class="nav-box">
                                     <div class="nav-icon"><i class="fas fa-user-friends fa-lg"></i></div>
-                                    <div class="nav-span"><span>Communities</span></div>  
+                                    <div class="nav-span"><span>Communities</span></div>
                                 </div>
                             </a>
                             <a href="#">
                                 <div class="nav-box">
                                     <div class="nav-icon"><i class="fas fa-user-check fa-lg"></i></div>
-                                    <div class="nav-span"><span>Verified</span></div>   
+                                    <div class="nav-span"><span>Verified</span></div>
                                 </div>
                             </a>
                             <a href="#">
@@ -84,18 +87,25 @@
                             </div>
                         </a>
                     </div>
-                </div>  
+                </div>
+
                 <div class="user-panel">
                     <div class="user-panel-box">
                         <div class="user-box">
-                            <div class="user-img"><img src="logo/twitter-dp.jpg"></div>
+                            <div class="user-img">
+                                <img src="logo/twitter-dp.jpg">
+                            </div>
                             <div class="user-name">
                                 <div class="username-box">
-                                    <div class="namespan"><span>yogesh dewangan</span></div>
-                                    <div class="user-name-span"><span>@_yogeshdewangan</span></div>
+                                    <div class="namespan">
+                                        <span>prabhas</span>
+                                    </div>
+                                    <div class="user-name-span">
+                                        <span>@prabhas</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="user-more-icon">
+                            <div class="user-more-icon" onclick="tooltipButton(this)">
                                 <i class="fa-solid fa-ellipsis-vertical fa-rotate-90"></i>
                             </div>
                         </div>
@@ -135,7 +145,7 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div class="main-nav-option"  id="nav-opt2">
+                                            <div class="main-nav-option" id="nav-opt2">
                                                 <a href="#">
                                                     <div class="nav-option1" id="option2">
                                                         <div class="nav-option2">
@@ -159,73 +169,36 @@
                                             </div>
                                         </div>
                                         <div class="main-box2-creater" id="main-box2-creater">
+                                            <form action="php/tweet.php" method="post" enctype="multipart/form-data">
                                             <div class="write-container" id="write-container">
-                                                <div class="share-with-container" style="display: none;">
-                                                    <div class="share-with-section">
-                                                        <div class="share-with-box">
-                                                            <div class="share-content">
-                                                                <span>
-                                                                    <span>Everyone</span>
-                                                                    <i class="fa-solid fa-chevron-up fa-rotate-180"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="text-area-container" id="text-area-container">
-                                                    <div class="text-container">
-                                                        <div class="text-sub-container">
-                                                            <div class="text-area">
-                                                                <div class="text">What is happening?!</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="create-post tweet-box" id="create-post" style="display: none;">
-                                                        <div class="tweet-box" contenteditable="true" id="tweet-box" >
-                                                            <div class="text-sub-container">
-                                                                <div class="text-area" id="text-area">
-                                                                    <div class="text" id="text">
-                                                                        <span id="textSpan">What is happening?!</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                <div id="tweet-box">
+                                                    <div for="textarea" class="textarea">
+                                                        <textarea id="text" name="status" placeholder="What is Happening?!"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="media-container" id="media-container">
-                                                <div class="media-excess-container" style="display: none;">
-                                                    <div class="media-excess-section">
-                                                        <div class="media-excess-box">
-                                                            <div class="media-excess-sub-box">
-                                                                <div class="media-excess share-content">
-                                                                    <i class="fa-solid fa-earth-americas"></i>
-                                                                    <span>Everyone can reply</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="media-area">
                                                     <div class="media-icon-box">
                                                         <div class="media-icon" role="button" id="input-img"><i class="fa-regular fa-image"></i>
                                                         </div>
-                                                        <input type="file" accept="image/jpeg, image/png, image/webp, image/gif, video/mp4, video/quicktime" id="input-media">
+                                                        <input type="file" accept="image/jpeg, image/png, image/webp, image/gif, video/mp4, video/quicktime" id="input-media" name="file">
                                                         <div class="media-icon" role="button"><i class="fas fa-gift"></i></div>
                                                         <div class="media-icon" role="button"><i class="fa-solid fa-square-poll-vertical"></i></div>
                                                         <div class="media-icon" role="button"><i class="fa-regular fa-face-smile"></i></div>
                                                         <div class="media-icon" role="button"><i class="fa-regular fa-calendar"></i></div>
                                                         <div class="media-icon" role="button"><i class="fa-solid fa-location-dot"></i></div>
                                                     </div>
-                                                    <div class="media-button" id="tweet-button" >
+                                                    <div class="media-button" id="tweet-button">
                                                         <div class="post-button">
-                                                            <div class="post-span">
-                                                                <span>Tweet</span>
+                                                            <div class="post-span button">
+                                                                <input id="tweetButton" type="submit" name="submit" value="Tweet">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -243,7 +216,7 @@
                                                         <img src="logo/dp-img3.jpg">
                                                     </div>
                                                 </div>
-                                                <div class="twitter-post-section">                             
+                                                <div class="twitter-post-section">
                                                     <div class="tweet-user-box1">
                                                         <div class="tweet-row1">
                                                             <div class="tweet-u-b">
@@ -252,7 +225,7 @@
                                                                         <a href="#">
                                                                             <div class="a-user">
                                                                                 <div><span>
-                                                                                    Velina Tchakarova</span></div>
+                                                                                        Velina Tchakarova</span></div>
                                                                                 <div><img src="logo/Blue-Tick.png" style="width:14px; height:14px; margin-left:4px;margin-right:4px;"></div>
                                                                             </div>
                                                                         </a>
@@ -270,7 +243,7 @@
                                                             <div class="t-thought">
                                                                 <span>Happy #IndependenceDay, India <img src="logo/india.svg" style="width:20px; height:20px;">! This is #India's year given its role in #G20, #BRICS, #QUAD, and many more international forums. #geopolitics #Velsig</span>
                                                                 <span class="hash-tag">
-#India #IndependenceDay #HarGharTiranga@narendramodi
+                                                                    #India #IndependenceDay #HarGharTiranga@narendramodi
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -297,20 +270,20 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-section">
-                                                                    <div class="react-container like">
-                                                                        <div class="react-box "><i class="fa-regular fa-heart"></i></div>
-                                                                        <div class="react-span "><span>8902</span></div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-section">
+                                                                        <div class="react-container like">
+                                                                            <div class="react-box "><i class="fa-regular fa-heart"></i></div>
+                                                                            <div class="react-span "><span>8902</span></div>
+                                                                        </div>
                                                                     </div>
-                                                                </div> 
-                                                            </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-container view">
-                                                                    <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
-                                                                    <div class="react-span"><span>596.2k</span></div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-container view">
+                                                                        <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
+                                                                        <div class="react-span"><span>596.2k</span></div>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="react-box-card share">
                                                                     <div class="react-container ">
                                                                         <div class="react-box"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
@@ -318,7 +291,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -337,7 +310,7 @@
                                                         <img src="logo/dp-img1.jpg">
                                                     </div>
                                                 </div>
-                                                <div class="twitter-post-section">                             
+                                                <div class="twitter-post-section">
                                                     <div class="tweet-user-box1">
                                                         <div class="tweet-row1">
                                                             <div class="tweet-u-b">
@@ -359,19 +332,19 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                            <div class="tweet-row2">
-                                                <div class="t-thought">
-                                                    <span>Congratulations #India with your Independence Day on August 15! A strong and true democracy, secular, but with a dominant Hindu identity and values. I cherish my friendship with the Indian and Hindu people.
+                                                        <div class="tweet-row2">
+                                                            <div class="t-thought">
+                                                                <span>Congratulations #India with your Independence Day on August 15! A strong and true democracy, secular, but with a dominant Hindu identity and values. I cherish my friendship with the Indian and Hindu people.
 
- I love you India ❤️  
-                                                    </span>
-                                                    <span class="hash-tag"> #independanceday
- #IndependenceDayIndia
-                                                    </span>
-                                                </div>
-                                            </div>
+                                                                    I love you India ❤️
+                                                                </span>
+                                                                <span class="hash-tag"> #independanceday
+                                                                    #IndependenceDayIndia
+                                                                </span>
+                                                            </div>
+                                                        </div>
                                                         <div class="tweet-media">
-                                                            <img src="logo/tiranga.jpg" >
+                                                            <img src="logo/tiranga.jpg">
                                                         </div>
                                                         <div class="activity-container">
                                                             <div class="activity-section">
@@ -391,20 +364,20 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-section">
-                                                                    <div class="react-container like">
-                                                                        <div class="react-box "><i class="fa-regular fa-heart"></i></div>
-                                                                        <div class="react-span "><span>361</span></div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-section">
+                                                                        <div class="react-container like">
+                                                                            <div class="react-box "><i class="fa-regular fa-heart"></i></div>
+                                                                            <div class="react-span "><span>361</span></div>
+                                                                        </div>
                                                                     </div>
-                                                                </div> 
-                                                            </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-container view">
-                                                                    <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
-                                                                    <div class="react-span"><span>42.6k</span></div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-container view">
+                                                                        <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
+                                                                        <div class="react-span"><span>42.6k</span></div>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="react-box-card share">
                                                                     <div class="react-container ">
                                                                         <div class="react-box"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
@@ -430,7 +403,7 @@
                                                         <img src="logo/dp-isro.jpg">
                                                     </div>
                                                 </div>
-                                                <div class="twitter-post-section">                             
+                                                <div class="twitter-post-section">
                                                     <div class="tweet-user-box1">
                                                         <div class="tweet-row1">
                                                             <div class="tweet-u-b">
@@ -455,16 +428,16 @@
                                                         <div class="tweet-row2">
                                                             <div class="t-thought">
                                                                 <span>Chandrayaan-3 Mission:
-India celebrates #InternationalMoonDay 2023 by propelling Chandrayaan-3 🛰️ a step closer to the Moon.
+                                                                    India celebrates #InternationalMoonDay 2023 by propelling Chandrayaan-3 🛰️ a step closer to the Moon.
 
-The fourth orbit-raising maneuver (Earth-bound perigee firing) is performed successfully from ISTRAC/ISRO, Bengaluru.
+                                                                    The fourth orbit-raising maneuver (Earth-bound perigee firing) is performed successfully from ISTRAC/ISRO, Bengaluru.
 
-The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
+                                                                    The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                                 <span class="hash-tag">#Chandrayaan3</span>
                                                             </div>
                                                         </div>
                                                         <div class="tweet-media">
-                                                            <img src="logo/chandrayaan3.jpg" >
+                                                            <img src="logo/chandrayaan3.jpg">
                                                         </div>
                                                         <div class="activity-container">
                                                             <div class="activity-section">
@@ -484,20 +457,20 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-section">
-                                                                    <div class="react-container like">
-                                                                        <div class="react-box "><i class="fa-regular fa-heart"></i></div>
-                                                                        <div class="react-span "><span>12.8k</span></div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-section">
+                                                                        <div class="react-container like">
+                                                                            <div class="react-box "><i class="fa-regular fa-heart"></i></div>
+                                                                            <div class="react-span "><span>12.8k</span></div>
+                                                                        </div>
                                                                     </div>
-                                                                </div> 
-                                                            </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-container view">
-                                                                    <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
-                                                                    <div class="react-span"><span>773.4k</span></div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-container view">
+                                                                        <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
+                                                                        <div class="react-span"><span>773.4k</span></div>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="react-box-card share">
                                                                     <div class="react-container ">
                                                                         <div class="react-box"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
@@ -523,7 +496,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                         <img src="logo/dp-img2.jpg">
                                                     </div>
                                                 </div>
-                                                <div class="twitter-post-section">                             
+                                                <div class="twitter-post-section">
                                                     <div class="tweet-user-box1">
                                                         <div class="tweet-row1">
                                                             <div class="tweet-u-b">
@@ -549,12 +522,12 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                             <div class="t-thought">
                                                                 <span>My special message for India's 77th Independence Day. 'Ja Hind', my beloved India! <img src="logo/america.svg" style="width:20px; height:20px;"> <img src="logo/india.svg" style="width:20px; height:20px;"></span>
                                                                 <span class="hash-tag">
-#India #IndependenceDay #HarGharTiranga@narendramodi
+                                                                    #India #IndependenceDay #HarGharTiranga@narendramodi
                                                                 </span>
                                                             </div>
                                                         </div>
                                                         <div class="tweet-media">
-                                                            <video  controls>
+                                                            <video controls>
                                                                 <source src="logo/twitter-vedio1.mp4" type="video/mp4">
                                                             </video>
                                                         </div>
@@ -576,20 +549,20 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-section">
-                                                                    <div class="react-container like">
-                                                                        <div class="react-box "><i class="fa-regular fa-heart"></i></div>
-                                                                        <div class="react-span "><span>50.8K</span></div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-section">
+                                                                        <div class="react-container like">
+                                                                            <div class="react-box "><i class="fa-regular fa-heart"></i></div>
+                                                                            <div class="react-span "><span>50.8K</span></div>
+                                                                        </div>
                                                                     </div>
-                                                                </div> 
-                                                            </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-container view">
-                                                                    <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
-                                                                    <div class="react-span"><span>981K</span></div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-container view">
+                                                                        <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
+                                                                        <div class="react-span"><span>981K</span></div>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="react-box-card share">
                                                                     <div class="react-container ">
                                                                         <div class="react-box"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
@@ -615,7 +588,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                         <img src="logo/dp-news.jpg">
                                                     </div>
                                                 </div>
-                                                <div class="twitter-post-section">                             
+                                                <div class="twitter-post-section">
                                                     <div class="tweet-user-box1">
                                                         <div class="tweet-row1">
                                                             <div class="tweet-u-b">
@@ -644,7 +617,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                             </div>
                                                         </div>
                                                         <div class="tweet-media">
-                                                            <img src="logo/news1.jpg" >
+                                                            <img src="logo/news1.jpg">
                                                         </div>
                                                         <div class="activity-container">
                                                             <div class="activity-section">
@@ -664,20 +637,20 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-section">
-                                                                    <div class="react-container like">
-                                                                        <div class="react-box "><i class="fa-regular fa-heart"></i></div>
-                                                                        <div class="react-span "><span>361</span></div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-section">
+                                                                        <div class="react-container like">
+                                                                            <div class="react-box "><i class="fa-regular fa-heart"></i></div>
+                                                                            <div class="react-span "><span>361</span></div>
+                                                                        </div>
                                                                     </div>
-                                                                </div> 
-                                                            </div>
-                                                            <div class="react-box-card">
-                                                                <div class="react-container view">
-                                                                    <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
-                                                                    <div class="react-span"><span>42.6k</span></div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="react-box-card">
+                                                                    <div class="react-container view">
+                                                                        <div class="react-box"><i class="fa-solid fa-chart-simple"></i></div>
+                                                                        <div class="react-span"><span>42.6k</span></div>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="react-box-card share">
                                                                     <div class="react-container ">
                                                                         <div class="react-box"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
@@ -694,22 +667,22 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                             </div>
                         </div>
                         <div class="main-box3-b" style="display: none;" id="main-box3-b">
-                            
-                                <div class="main-box3-section">
-                                    <div class="main-box3-container">
-                                        <div class="box3-head">
-                                            <span>Welcome to Twitter!</span>
-                                        </div>
-                                        <div class="box3-text">
-                                            <span>This is the best place to see what's happening in your world. Find some people and topics to follow now.</span>
-                                        </div>
-                                        <a href="#" class="box3-link">
-                                            <div class="box3-span">
-                                                <span>Let's go!</span>
-                                            </div>
-                                        </a>
+
+                            <div class="main-box3-section">
+                                <div class="main-box3-container">
+                                    <div class="box3-head">
+                                        <span>Welcome to Twitter!</span>
                                     </div>
+                                    <div class="box3-text">
+                                        <span>This is the best place to see what's happening in your world. Find some people and topics to follow now.</span>
+                                    </div>
+                                    <a href="#" class="box3-link">
+                                        <div class="box3-span">
+                                            <span>Let's go!</span>
+                                        </div>
+                                    </a>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -726,8 +699,8 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                 <div class="search-icon">
                                                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                                                 </div>
-                                                <div class="form-input">
-                                                    <input type="text" placeholder="Search Twitter">
+                                                <div class="form-input-search">
+                                                    <input class="searchInput" type="text" placeholder="Search Twitter">
                                                 </div>
                                             </div>
                                         </form>
@@ -749,7 +722,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                         </a>
                                     </div>
                                 </div>
-    
+
                                 <div class="side-box3">
                                     <div class="heading-section">
                                         <div class="sub-heading">
@@ -837,7 +810,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                         </a>
                                     </div>
                                 </div>
-    
+
                                 <div class="side-box4">
                                     <div class="follow-section">
                                         <div class="follow-sub-section">
@@ -855,7 +828,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                         <div class="user-area">
                                                             <div class="user-sub-area">
                                                                 <div class="user-name-box">
-                                                                    <div class="name-span"><span>Deserted Places</span><img src="logo/svj1.svg"></div>
+                                                                    <div class="name-span"><span>Deserted Places</span></div>
                                                                     <div class="username-span"><span>@Desertedpicx</span></div>
                                                                 </div>
                                                                 <div class="follow-area">
@@ -884,7 +857,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -919,7 +892,7 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
                                         </div>
                                     </div>
                                 </div>
-    
+
                                 <div class="side-box5">
                                     <nav class="footer-navbar">
                                         <a href="#"><span>Terms of Service</span></a>
@@ -970,6 +943,27 @@ The next firing is planned for July 25, 2023, between 2 and 3 pm IST.</span>
         </div>
     </div>
 
-    <script src="twitter-clone.js"></script>
+    <div class="custom-container tooltip" id="tooltip" style="display: none;">
+        <div class="custom-section">
+            <div class="custom-box">
+                <div class="custom-span">
+                    <span>Add an existing account</span>
+                </div>
+            </div>
+            <div class="custom-box">
+                <div class="custom-span">
+                    <a href="login.php"><span>Log out @prabhas</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="cross-icon cross" id="cross-icon" onclick="closeTab2(this)">
+            <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+    </div>
+
+    <script src="JavaScript/twitter-clone.js"></script>
+    <script src="JavaScript/tweet.js"></script>
+    <!-- <script src="JavaScript/post.js"></script> -->
 </body>
+
 </html>
